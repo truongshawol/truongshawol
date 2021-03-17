@@ -14,10 +14,12 @@ import * as type from './TypeAction'
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faUserCircle, faStoreAlt, faChevronLeft, faChevronRight, 
-  faSearch, faCartArrowDown, faBars, faCaretSquareLeft, faCaretSquareRight, faPlusCircle, faMinusCircle} 
+  faSearch, faCartArrowDown, faBars, faCaretSquareLeft, 
+  faCaretSquareRight, faPlusCircle, faMinusCircle} 
 from '@fortawesome/free-solid-svg-icons'
 library.add(faUserCircle, faStoreAlt, faChevronRight, 
-  faChevronLeft, faSearch, faCartArrowDown, faBars, faCaretSquareRight, faCaretSquareLeft, faPlusCircle, faMinusCircle)
+  faChevronLeft, faSearch, faCartArrowDown, faBars, faCaretSquareRight, 
+  faCaretSquareLeft, faPlusCircle, faMinusCircle, )
 
 function getToken() {
   return localStorage.getItem("token");

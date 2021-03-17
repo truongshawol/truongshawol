@@ -6,6 +6,9 @@ import {Link, Redirect} from 'react-router-dom'
 import Slider from '../Component/slide/slider'
 import Products from '../Component/products'
 import menu from '../routers'
+import { FaFacebook, FaFacebookMessenger, FaGithub, FaViber } from "react-icons/fa";
+import { GrInstagram } from "react-icons/gr";
+
 
 
 function HomePage({sodem}) {
@@ -65,10 +68,32 @@ function HomePage({sodem}) {
             </div>
             <div className='container-fluid footer'>
                 <div className="footer_left">
-                    
+                    <div className="childen">
+                        <p><b>NAME</b></p>
+                        <p>Kiều Văn Trường</p>
+                        <p><b>BIRTH</b></p>
+                        <p>23/06/1998</p>
+                    </div>
+                </div>
+                <div className="footer_center">
+                    <div className="childen">
+                        <p><b>EMAIL</b></p>
+                        <p>kvt.banana@gmail.com</p>
+                        <p><b>PHONE</b></p>
+                        <p>0352735858</p>
+                    </div>
                 </div>
                 <div className="footer_right">
-                    
+                    <div className="childen">
+                        <p><b>SOCIAL MEDIA</b></p>
+                        <p>
+                            <FaFacebook style={{margin: "0px 10px"}}/>
+                            <FaFacebookMessenger style={{margin: "0px 10px"}}/>
+                            <GrInstagram style={{margin: "0px 10px"}}/>
+                            <FaGithub style={{margin: "0px 10px"}}/>
+                            <FaViber style={{margin: "0px 10px"}}/>
+                        </p>
+                    </div>
                 </div>
                 <div className="footer_end">
                     <p>@by Kiều Văn Trường</p>
