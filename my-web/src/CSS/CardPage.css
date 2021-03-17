@@ -1,0 +1,115 @@
+:root {
+    --text-color: #FCFAFD;
+    --text2-color: #EAADF8;
+    --background-color: #31023C ;
+    --background2-color: #F2F2F3 ;
+}
+.cardpage {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(10, 10, 10, 0.7);
+}
+.card {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+}
+.card_title {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* border-bottom: 1px solid var(--background-color); */
+    background-color: var(--text2-color);
+}
+.card_item {
+    overflow: auto;
+    width: 100%;
+    height: 370px;
+    margin-top: 47px;
+}
+.item{
+    margin: auto;
+    margin-bottom: 10px;
+    width: 85%;
+    height: 200px;
+    display: flex;
+    border-bottom: 2px solid var(--background-color);
+    padding: 5px 10px;
+    color: var(--background-color);
+}
+.item:first-child {
+    border-top: 2px solid var(--background-color);
+}
+.item_ava {
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.item_ava img {
+    width: auto;
+    height: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+.item_title {
+    width: 100%;
+    height: 20%;
+    font-weight: 700;
+    line-height: 17px;
+}
+.item_thongso {
+    width: 100%;
+    height: 69%;
+}
+.item_thongso p {
+    margin: 0;
+    font-size: 13px;
+}
+.item_soluong {
+    width: 50%;
+    height: 100%;
+    font-weight: 700;
+}
+.item_gia {
+    width: 50%;
+    height: 100%;
+    font-weight: 700;
+}
+.card_priceAll {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* border-top: 1px solid var(--background-color); */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--text2-color)
+}
+.card_priceAll button {
+    border: none;
+    border-radius: 4px;
+    background-color: var(--background-color);
+    padding: 3px 20px;
+    color: var(--text-color);
+}
+.card_priceAll button:hover {
+    background-color: var(--background2-color);
+    box-shadow: 0px 0px 1px var(--background2-color), 0px 0px 25px var(--background2-color), 0px 0px 50px var(--background2-color);
+    color: var(--background-color);
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.5s;
+}
+.card_priceAll h3 {
+    margin: 0;
+    padding: 0;
+    color: var(--background-color);
+}
