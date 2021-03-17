@@ -4,7 +4,7 @@
     --background-color: #31023C ;
     --background2-color: #F2F2F3 ;
 }
-.login {
+.register {
     position: fixed;
     top: 0;
     background-color: rgba(10, 10, 10, 0.7);
@@ -12,29 +12,31 @@
     height: 100vh;
     box-sizing: border-box;
 }
-.login .login_container {
-    width: 450px;
-    height: 450px;
+.register .register_container {
+    width: 700px;
+    height: 300px;
     margin: auto;
-    margin-top: 100px;
-    text-align: center;
-    border: 1px solid var(--background2-color);
-    border-radius: 50%;
+    margin-top: 150px;
+    align-items: center;
+    background-color: var(--background2-color);
+    box-shadow: 0px 0px 10px #102b2e, 0px 0px 50px #102b2e, 0px 0px 90px #102b2e;
 }
-.login .login_container h1 {
-    font-size: 90px;
-    margin-top: 20px;
-    margin-bottom: 25px;
+.register .register_container h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
     padding: 0;
     text-align: center;
-    color: var(--background2-color);
+    color: var(--background-color);
+    font-weight: 900;
 }
-.login .login_container input {
+.register .register_container input {
+    margin-left: 50%;
+    transform: translateX(-50%);
     border: none;
-    border-radius: 20px;
-    width: 180px;
+    border-radius: 7px;
+    width: 350px;
     height: 45px;
-    margin-bottom: 7px;
+    margin-bottom: 10px;
     text-align: center;
     background-color: var(--background2-color);
     color: #102b2e;
@@ -42,15 +44,13 @@
     font-weight: 500;
     outline: none;
 }
-.login .login_container input:focus {
+.register .register_container input:focus {
     background-color: white;
     transition: 0.7s;
-    width: 350px;
-    box-shadow: 0px 0px 10px var(--background-color), 0px 0px 50px var(--background-color), 0px 0px 50px var(--background-color);
+    box-shadow: 0px 0px 1px var(--background-color), 0px 0px 50px var(--background-color), 0px 0px 50px var(--background-color);
 }
-.login .login_container input:hover {
+.register .register_container input:hover {
     background-color: white;
-    width: 350px;
     transition: 0.7s;
     box-shadow: 0px 0px 10px var(--background-color), 0px 0px 50px var(--background-color), 0px 0px 90px var(--background-color);
 }
@@ -60,20 +60,23 @@
     font-size: 15px;
     font-weight: 500;
 }
-.login .login_container button {
+.register .register_container button {
     border: 2px solid white;
-    border-radius: 7px;
-    width: 356px;
+    border-radius: 20px;
+    width: 180px;
     height: 50px;
-    margin: 20px 0px 20px 0px;
+    margin-left: 50%;
+    margin-top: 50px;
+    transform: translateX(-50%);
     text-align: center;
     background-color: white;
     color: rgb(3, 71, 71);
     font-size: 20px;
     font-weight: 900;
     outline: none;
+    box-shadow: 0px 2px 300px 3px var(--text2-color);
 }
-.login .login_container button:hover {
+.register .register_container button:hover {
     font-size: 25px;
     transition: 0.7s;
     cursor: pointer;

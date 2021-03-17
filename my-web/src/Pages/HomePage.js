@@ -22,7 +22,6 @@ function HomePage({sodem}) {
                 </div>
                 <div className="header_menu">
                     <Link to="/">Home</Link>
-                    <Link to="/">About</Link>
                     <Link to="/card" ><FontAwesomeIcon icon="cart-arrow-down"/> card
                             {
                                 sodem == 0 ? "" : <div className="countCard">{sodem}</div>
@@ -32,7 +31,7 @@ function HomePage({sodem}) {
                         <p><FontAwesomeIcon icon="bars"/></p>
                         <div className="header_menu_user-log">
                             <div className="log-menu"><Link to="/login">Login</Link></div>
-                            <div className="log-menu"><Link to="/" onClick={()=>localStorage.removeItem("token")}>Logout</Link></div>
+                            <div className="log-menu"><Link to="/register">Register</Link></div>
                         </div>
                     </Link>
                 </div>

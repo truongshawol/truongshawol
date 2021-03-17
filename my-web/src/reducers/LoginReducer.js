@@ -5,9 +5,10 @@ const initialState = {
     token: "",
     message: "",
     name: "",
+    messageRegister: "",
 }
 
-export default function LoginReducer (state = initialState, action={}) {
+export function LoginReducer (state = initialState, action={}) {
     switch (action.type) {
         case type.LOGIN:
             return {
@@ -25,6 +26,28 @@ export default function LoginReducer (state = initialState, action={}) {
             return {
                 ...state,
                 message: "Login Failed"
+            }
+    }
+    return state;
+}
+
+
+export function RegisterReducer (state = initialState, action={}) {
+    switch (action.type) {
+        case type.REGISTER:
+            return {
+                ...state
+            }
+        case type.REGISTER_SUCCESS:
+            return {
+                ...state,
+                messageRegister: "register succes",
+
+            }
+        case type.REGISTER_FAILED:
+            return {
+                ...state,
+                messageRegister: "register Failed"
             }
     }
     return state;

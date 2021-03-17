@@ -1,4 +1,4 @@
-import loginAction from '../Apis/LoginApi'
+import LoginAction from '../Apis/LoginApi'
 import * as type from '../TypeAction'
 
 function saveToken(token) {
@@ -7,7 +7,7 @@ function saveToken(token) {
 
 export const Login = (data) => (dispatch) => {
     dispatch({ type: type.LOGIN })
-    loginAction.login(data)
+    LoginAction.login(data)
         .then((res) => {
             console.log("data action: ", res)
             dispatch({ 
@@ -21,5 +21,18 @@ export const Login = (data) => (dispatch) => {
         })
         .catch((err) => {
             dispatch({ type: type.LOGIN_FAILED })
+        })
+}
+
+export const Register = (data) => (dispatch) => {
+    dispatch({ type: type.REGISTER })
+    LoginAction.register(data)
+        .then((res) => {
+            dispatch({ 
+                type: type.REGISTER_SUCCESS,
+            })
+        })
+        .catch((err) => {
+            dispatch({ type: type.REGISTER_FAILED })
         })
 }

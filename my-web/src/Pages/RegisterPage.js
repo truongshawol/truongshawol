@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import '../CSS/LoginPage.css'
+import {Register} from '../actions/LoginAction'
 import {connect} from 'react-redux'
-import {Login} from '../actions/LoginAction'
 import {Redirect} from 'react-router-dom'
-import HomePage from './HomePage'
+import '../CSS/RegisterPage.css'
+import LoginPage from './LoginPage' 
 
-function LoginPage({Login, logedIn, message}) {
+function RegisterPage({Register, message}) {
+
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
@@ -22,13 +23,13 @@ function LoginPage({Login, logedIn, message}) {
             username: username,
             password: password
         }
-        Login(value)
+        Register(value)
     }
+
     return (
-        logedIn ? <Redirect to="/"><HomePage a={username}/></Redirect> : (
-            <div className="login">
-                <div className="login_container">
-                <h1><FontAwesomeIcon icon="user-circle" /></h1>
+        <div className="register">
+                <div className="register_container">
+                <h1>R E G I S T E R</h1>
                 <div>
                     <input 
                         type="text" 
@@ -45,18 +46,17 @@ function LoginPage({Login, logedIn, message}) {
                         onChange={passwordChange}>
                     </input>
                 </div>
-                <button onClick={onClick}>LOGIN</button>
-                <p style={{color:"red"}}>{message}</p>
+                <button onClick={onClick}>REGISTER</button>
             </div>
         </div>
-        )
-    )
+    );
 }
 
-function mapStateToProps({login}) {
+
+function mapStateToProps({register}) {
     return {
-        logedIn: login.logedIn,
-        message: login.message
+        message: register.messageRegister
     }
 }
-export default connect( mapStateToProps ,{Login})(LoginPage)
+
+export default connect( mapStateToProps ,{Register})(RegisterPage)
