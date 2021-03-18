@@ -4,6 +4,7 @@ import HomePage from './Pages/HomePage'
 import LoginPage from './Pages/LoginPage'
 import CardPage from './Pages/CardPage'
 import RegisterPage from './Pages/RegisterPage'
+import AddProduct from './Component/Products/addProduct'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/login" component={LoginPage} />
       <Route path="/register" component={RegisterPage} />
       <Route path="/card" component={CardPage} />
+      <Route path="/addproduct" component={AddProduct} />
     </Router>
   );
 }

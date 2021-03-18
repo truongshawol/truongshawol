@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import '../CSS/CardPage.css'
-import ava from '../IMG/5.jpg'
 import {CardAction} from '../actions/AddCardAction'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
@@ -56,6 +56,7 @@ const CardPage = ({CardAction, listCard}) => {
                     <button>Thanh toán</button>
                 </div>
                 </div>
+                <Link to="/"><div className="closs">X</div></Link>
             </div>
         </div>
     );

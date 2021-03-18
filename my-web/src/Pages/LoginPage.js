@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import '../CSS/LoginPage.css'
 import {connect} from 'react-redux'
 import {Login} from '../actions/LoginAction'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import HomePage from './HomePage'
 
 function LoginPage({Login, logedIn, message}) {
@@ -47,7 +47,9 @@ function LoginPage({Login, logedIn, message}) {
                 </div>
                 <button onClick={onClick}>LOGIN</button>
                 <p style={{color:"red"}}>{message}</p>
+                <Link to="/"><div className="closs">X</div></Link>
             </div>
+            
         </div>
         )
     )

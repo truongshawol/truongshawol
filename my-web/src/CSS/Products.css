@@ -10,7 +10,7 @@
 .booth_list {
     float: left;
     width: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
 
 /* btn start */
@@ -162,3 +162,21 @@
     transition: 0.5s;
 }
 /* card end */
+.addproduct {
+    margin-bottom: 10px;
+}
+.addproduct a {
+    text-align: center;
+    margin-left: 46%;
+    transform: translateX(-50%);
+    color: black;
+    text-decoration: underline var(--background-color) 1px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.addproduct a:hover {
+    cursor: pointer;
+    color: var(--background-color);
+    font-weight: 700;
+    
+}

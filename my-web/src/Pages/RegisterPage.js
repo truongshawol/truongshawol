@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {Link} from 'react-router-dom'
 import {Register} from '../actions/LoginAction'
 import {connect} from 'react-redux'
-import {Redirect} from 'react-router-dom'
 import '../CSS/RegisterPage.css'
-import LoginPage from './LoginPage' 
+ 
 
 function RegisterPage({Register, message}) {
 
@@ -47,6 +46,7 @@ function RegisterPage({Register, message}) {
                     </input>
                 </div>
                 <button onClick={onClick}>REGISTER</button>
+                <Link to="/"><div className="closs">X</div></Link>
             </div>
         </div>
     );

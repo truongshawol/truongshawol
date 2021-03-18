@@ -1,10 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {FetchProductsAction} from '../actions/FetchProductsAction'
-import {AddCountCard} from '../actions/AddCountCart'
+import {FetchProductsAction} from '../../actions/FetchProductsAction'
+import {AddCountCard} from '../../actions/AddCountCart'
 import {connect} from 'react-redux'
-import '../CSS/Products.css'
+import '../../CSS/Products.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {AddCardAction} from '../actions/AddCardAction'
+import {AddCardAction} from '../../actions/AddCardAction'
+import { Link } from 'react-router-dom';
 
 
 
@@ -89,6 +90,7 @@ function Products({FetchProductsAction, listProducts, total, AddCountCard, nav, 
                     }) 
                 }
             </div>
+            <div className="addproduct"><Link to="/addproduct">Add Product!</Link></div>
             <div className="booth_btn">
                 <button disabled={pagination.page == 1} onClick={onButtonPrev}>
                     <FontAwesomeIcon icon="caret-square-left"/>

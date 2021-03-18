@@ -1,4 +1,4 @@
-import Products from "./Component/products"
+import Products from "./Component/Products/products"
 
 const menu = [
     {

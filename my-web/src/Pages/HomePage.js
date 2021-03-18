@@ -4,7 +4,7 @@ import '../CSS/HomePage.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {Link, Redirect} from 'react-router-dom'
 import Slider from '../Component/slide/slider'
-import Products from '../Component/products'
+import Products from '../Component/Products/products'
 import menu from '../routers'
 import { FaFacebook, FaFacebookMessenger, FaGithub, FaViber } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";

@@ -12,6 +12,7 @@
     background-color: rgba(10, 10, 10, 0.7);
 }
 .card {
+    position: relative;
     width: 70%;
     height: 70%;
     position: absolute;
@@ -112,4 +113,19 @@
     margin: 0;
     padding: 0;
     color: var(--background-color);
+}
+.closs {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 28px;
+    height: 28px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+}
+.closs:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.5s;
 }
