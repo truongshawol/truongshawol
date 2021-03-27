@@ -6,10 +6,10 @@ const initialState = {
         total: 1,
         message: ""
     },
-    
+    message: ""
 }
 
-export default function fetchProducts (state= initialState, action={}) {
+export function fetchProducts (state= initialState, action={}) {
     switch(action.type) {
         case type.FETCH_PRODUCTS:
             return {
@@ -36,4 +36,64 @@ export default function fetchProducts (state= initialState, action={}) {
     }
     return state
         
+}
+
+export function DeleteProduct (state = initialState, action={}) {
+    switch(action.type) {
+        case type.DELETE_PRODUCTS:
+            return {
+                ...state
+            }
+        case type.DELETE_PRODUCTS_SUCCESS:
+            return {
+                ...state,
+                message: "delete success"
+            }
+        case type.DELETE_PRODUCTS_FAILED:
+            return {
+                ...state,
+                message: "delete failed"
+            }
+    }
+    return state
+}
+
+export function EditProduct (state = initialState, action={}) {
+    switch(action.type) {
+        case type.EDIT_PRODUCTS:
+            return {
+                ...state
+            }
+        case type.EDIT_PRODUCTS_SUCCESS:
+            return {
+                ...state,
+                message: "update success"
+            }
+        case type.EDIT_PRODUCTS_FAILED:
+            return {
+                ...state,
+                message: "update failed"
+            }
+    }
+    return state
+}
+
+export function AddProduct (state = initialState, action={}) {
+    switch(action.type) {
+        case type.ADD_PRODUCTS:
+            return {
+                ...state
+            }
+        case type.ADD_PRODUCTS_SUCCESS:
+            return {
+                ...state,
+                message: "add success"
+            }
+        case type.ADD_PRODUCTS_FAILED:
+            return {
+                ...state,
+                message: "add failed"
+            }
+    }
+    return state
 }

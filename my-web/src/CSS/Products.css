@@ -42,6 +42,7 @@
 
 /* item start */
 .items {
+    position: relative;
     width: 261px;
     height: 300px;
     margin: 0px 8px 10px 8px;
@@ -97,6 +98,36 @@
 .items .items_price span {
     font-size: 17px;
     font-weight: 500;
+}
+.item_delete {
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    font-size: 18px;
+    color: var(--background-color);
+    padding: 5px;
+}
+.item_repair a {
+    position: absolute;
+    top: 30px;
+    right: 4px;
+    color: var(--background-color);
+    padding: 5px;
+}
+.item_delete:hover,
+.item_repair a:hover {
+    color: var(--text2-color);
+}
+
+.delete_hover {
+    position: absolute;
+    top: 0;
+    right: -70px;
+}
+.repair_hover {
+    position: absolute;
+    top: 30px;
+    right: -10px;
 }
 /* item end */
 

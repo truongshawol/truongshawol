@@ -1,12 +1,15 @@
 import { combineReducers } from 'redux'
 import {LoginReducer, RegisterReducer} from './LoginReducer'
-import FetchProducts from './FetchProductsReducer'
+import {fetchProducts, DeleteProduct, EditProduct, AddProduct} from './FetchProductsReducer'
 import CountCard from './CountCardReducer'
-import CardReducer from './CardReducer'
+import {CardReducer} from './CardReducer'
 
 const reducers = combineReducers({
     login: LoginReducer,
-    fetchProducts: FetchProducts,
+    fetchProducts: fetchProducts,
+    deleteProduct: DeleteProduct,
+    editProduct: EditProduct,
+    addProduct: AddProduct,
     countCard: CountCard,
     card: CardReducer,
     register: RegisterReducer

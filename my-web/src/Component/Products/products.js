@@ -1,15 +1,17 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {FetchProductsAction} from '../../actions/FetchProductsAction'
-import {AddCountCard} from '../../actions/AddCountCart'
+import { Link, Redirect } from 'react-router-dom';
 import {connect} from 'react-redux'
 import '../../CSS/Products.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
+import {FetchProductsAction, DeleteProductAction} from '../../actions/FetchProductsAction'
+import {AddCountCard} from '../../actions/AddCountCart'
 import {AddCardAction} from '../../actions/AddCardAction'
-import { Link } from 'react-router-dom';
+import EditProduct from './editProduct'
+import HomePage from '../../Pages/HomePage';
 
 
-
-function Products({FetchProductsAction, listProducts, total, AddCountCard, nav, AddCardAction}) {
+function Products({FetchProductsAction, DeleteProductAction, listProducts, total, AddCountCard, nav, AddCardAction}) {
     const [count, setCount] = useState(1)
     const typingTimeoutRef = useRef(null)
     const [pagination, setPagination] = useState({
@@ -17,6 +19,7 @@ function Products({FetchProductsAction, listProducts, total, AddCountCard, nav, 
         limit: 8,
         key: ''
     })
+
     useEffect(()=>{
         setPagination({
             ...pagination,
@@ -53,12 +56,7 @@ function Products({FetchProductsAction, listProducts, total, AddCountCard, nav, 
             })
         }, 500)
     }
-    function onClickAddCard() {
-        setCount(count + 1)
-        AddCountCard(count)
-        AddCardAction()
-    }
-    
+        
     return (
        <div className="booth">
             <div className="search">
@@ -84,7 +82,27 @@ function Products({FetchProductsAction, listProducts, total, AddCountCard, nav, 
                                 <div className="items_price">
                                     <p><span>prince: </span>{item.price}</p>
                                 </div>
-                                <div className="add_card" onClick={onClickAddCard}><p>add to card</p></div>
+                                <div className="add_card" onClick={()=>{
+                                            setCount(count + 1)
+                                            AddCountCard(count)
+                                }
+                                }>
+                                    <p>add to card</p>
+                                </div>
+                                <div onClick={()=>{
+                                        DeleteProductAction(item._id)
+                                        setPagination({
+                                            ...pagination,
+                                            page: 1
+                                        })
+                                    }} 
+                                    className="item_delete"
+                                >
+                                    <FontAwesomeIcon icon="trash-alt"/>
+                                </div>
+                                <div className="item_repair">
+                                    <Link to="/edit"><FontAwesomeIcon icon="edit"/></Link>
+                                </div>
                             </div>
                             )
                     }) 
@@ -104,11 +122,12 @@ function Products({FetchProductsAction, listProducts, total, AddCountCard, nav, 
     )
 }
 
-function mapStateToProps ({fetchProducts}) {
+function mapStateToProps ({fetchProducts, deleteProduct}) {
     return {
         listProducts: fetchProducts.list.products,
         total: fetchProducts.list.total,
+        mesage: deleteProduct.message
     }
 }
 
-export default connect(mapStateToProps, {FetchProductsAction, AddCountCard, AddCardAction})(Products);
+export default connect(mapStateToProps, {FetchProductsAction, DeleteProductAction, AddCountCard, AddCardAction})(Products);
